@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-4.0.0-beta.min.js"></script>
     <link rel="stylesheet" href="index.css" />
     <title>토도</title>
 </head>
@@ -21,7 +22,33 @@
             </div>
         </nav>
     </header>
-    <main></main>
+
+    <div id="boxof"></div>
+
+    <script>
+        $(".btn").on("click", (e) => {
+            e.preventDefault();
+
+            const value = $("#todoval").val();
+
+            $.ajax({
+                url: "/api/todo",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ todo: value }),
+                success: (data) => {
+                    let $ul = $("#boxof ul");
+                    if ($ul.length === 0) {
+                        $ul = $("<ul>").appendTo("#boxof").addClass("ulk");
+                    }
+
+                    $("<li>").text(data.todo).appendTo($ul);
+
+                    $("#todoval").val("");
+                },
+            });
+        });
+    </script>
 </body>
 
 </html>

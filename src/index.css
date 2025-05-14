@@ -1,6 +1,7 @@
 * {
     user-select: none;
     text-decoration: none;
+    list-style-type: none;
 }
 
 :root {
@@ -45,4 +46,13 @@
 
 .input-wrapper .btn {
     border-radius: 5px;
+}
+
+#boxof {
+    padding-top: 60px;
+}
+
+.ulk {
+    background-color: #d5d5d5;
+    border: 1px solid var(--black-color);
 }

@@ -23,7 +23,9 @@
         </nav>
     </header>
 
-    <div id="boxof"></div>
+    <div id="boxof">
+        <ul id="ulof"></ul>
+    </div>
 
     <script>
         $(".btn").on("click", (e) => {
@@ -37,14 +39,11 @@
                 contentType: "application/json",
                 data: JSON.stringify({ todo: value }),
                 success: (data) => {
-                    let $ul = $("#boxof ul");
-                    if ($ul.length === 0) {
-                        $ul = $("<ul>").appendTo("#boxof").addClass("ulk");
+                    if (data.todo !== "") {
+                        $("<li>").text(data.todo).appendTo("#ulof").addClass("lik");
+                        $("<span id='remove'>").text("❌").appendTo(".lik").addClass("remove");
+                        $("#todoval").val("");
                     }
-
-                    $("<li>").text(data.todo).appendTo($ul);
-
-                    $("#todoval").val("");
                 },
             });
         });

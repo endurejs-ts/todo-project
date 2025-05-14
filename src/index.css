@@ -48,11 +48,26 @@
     border-radius: 5px;
 }
 
+button:hover, .btn:hover {
+    cursor: pointer;
+}
+
+button:not(:hover), .btn:not(:hover) {
+    cursor: auto;
+}
+
 #boxof {
     padding-top: 60px;
 }
 
-.ulk {
+.lik {
     background-color: #d5d5d5;
     border: 1px solid var(--black-color);
+    width: 95%;
+    height: 40px;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
 }

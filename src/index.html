@@ -30,9 +30,7 @@
     <script>
         $(".btn").on("click", (e) => {
             e.preventDefault();
-
             const value = $("#todoval").val();
-
             $.ajax({
                 url: "/api/todo",
                 method: "POST",
@@ -40,13 +38,18 @@
                 data: JSON.stringify({ todo: value }),
                 success: (data) => {
                     if (data.todo !== "") {
-                        const li = $("<li>").addClass("lik").text(data.todo);
+                        const li = $("<li>").addClass("lik");
+
+                        const left = $("<div class='left'>");
+                        $("<span class='heart'>").text("♡").appendTo(left); // 빈 하트
+                        $("<span class='text'>").text(data.todo).appendTo(left);
+                        li.append(left);
 
                         const div = $("<div class='remove'>");
                         $("<span class='remove-span'>").text("❌").appendTo(div);
                         $("<span class='complete-span'>").text("✔️").appendTo(div);
-
                         li.append(div);
+
                         li.appendTo("#ulof");
 
                         $("#todoval").val("");
@@ -56,7 +59,16 @@
         });
 
         $(document).on("click", ".remove-span", (e) => {
-            $(e.target).closest("li").remove(); // 클릭한 .remove-span 요소가 속한 li를 삭제
+            $(e.target).closest("li").remove();
+        });
+
+        $(document).on("click", ".complete-span", (e) => {
+            const li = $(e.target).closest("li");
+            li.toggleClass("completed");
+            li.css("background-color", "#858585");
+
+            const span = $(e.target).closest("span");
+            span.addClass("disabled");
         });
     </script>
 </body>

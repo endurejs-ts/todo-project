@@ -78,6 +78,24 @@ span:not(:hover),
     padding-left: 10px;
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+
+.lik.completed::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    width: 97.5%;
+    height: 1px;
+    background-color: var(--black-color);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.lik.completed * {
+    position: relative;
+    z-index: 1;
 }
 
 input:focus {
@@ -89,5 +107,10 @@ input:focus {
 }
 
 .remove-span {
-    padding-right: 10px;
+    padding-right: 20px;
+}
+
+span.disabled {
+    pointer-events: none;
+    opacity: 0.4;
 }

@@ -2,9 +2,9 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
     <title>토도</title>
 </head>
 
@@ -13,16 +13,11 @@
     <header class="h" id="h">
         <nav class="nav container">
             <a href="#" class="nav__logo">JHP AI Todo</a>
-
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#" class="nav__link">
-                            <i class="ri-arrow-right-up-line"></i>
-                            <span></span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="input-wrapper">
+                <form action="/aaa" method="post">
+                    <input type="text" name="tod-val" id="todoval" />
+                    <input type="submit" value="등록" class="btn" />
+                </form>
             </div>
         </nav>
     </header>

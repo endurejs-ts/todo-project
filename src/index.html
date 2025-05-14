@@ -70,6 +70,12 @@
             const span = $(e.target).closest("span");
             span.addClass("disabled");
         });
+
+        $(document).on("click", ".heart", (e) => {
+            const heart = $(e.target);
+            const current = heart.text();
+            heart.text(current === "♡" ? "❤️" : "♡");
+        });
     </script>
 </body>
 

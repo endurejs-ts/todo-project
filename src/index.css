@@ -74,7 +74,6 @@ span:not(:hover),
     width: 95%;
     height: 40px;
     text-align: left;
-    padding-top: 10px;
     padding-left: 10px;
     display: flex;
     justify-content: space-between;
@@ -86,7 +85,7 @@ span:not(:hover),
     position: absolute;
     top: 50%;
     left: 1%;
-    width: 97.5%;
+    width: 98%;
     height: 1px;
     background-color: var(--black-color);
     transform: translateY(-50%);
@@ -98,12 +97,26 @@ span:not(:hover),
     z-index: 1;
 }
 
+.left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* 하트와 텍스트 사이 간격 */
+}
+
+.text {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
 input:focus {
     outline: none;
 }
 
 .remove {
     padding-right: 20px;
+    padding-top: 5px;
 }
 
 .remove-span {

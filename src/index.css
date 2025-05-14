@@ -1,0 +1,21 @@
+:root {
+    --header-height: 3.5rem;
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(0, 0%, 0%);
+    --body-font: "Montserrat Alternates", sans-serif;
+    --h1-font-size: 1.5rem;
+    --normal-fs: .938rem;
+    --fr: 400;
+    --fm: 500;
+    --zt: 10;
+    --zf: 100;
+}
+
+.h {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #242526;
+    z-index: var(--zf);
+}

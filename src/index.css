@@ -48,16 +48,24 @@
     border-radius: 5px;
 }
 
-button:hover, .btn:hover {
+span:hover,
+.btn:hover {
     cursor: pointer;
 }
 
-button:not(:hover), .btn:not(:hover) {
+span:not(:hover),
+.btn:not(:hover) {
     cursor: auto;
 }
 
 #boxof {
     padding-top: 60px;
+}
+
+#ulof {
+    display: grid;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .lik {
@@ -70,4 +78,16 @@ button:not(:hover), .btn:not(:hover) {
     padding-left: 10px;
     display: flex;
     justify-content: space-between;
+}
+
+input:focus {
+    outline: none;
+}
+
+.remove {
+    padding-right: 20px;
+}
+
+.remove-span {
+    padding-right: 10px;
 }

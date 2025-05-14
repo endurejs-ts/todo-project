@@ -16,7 +16,7 @@
             <a href="#" class="nav__logo">JHP AI Todo</a>
             <div class="input-wrapper">
                 <form action="/aaa" method="post">
-                    <input type="text" name="tod-val" id="todoval" />
+                    <input type="text" name="tod-val" id="todoval" spellcheck="false" />
                     <input type="submit" value="등록" class="btn" />
                 </form>
             </div>
@@ -40,12 +40,23 @@
                 data: JSON.stringify({ todo: value }),
                 success: (data) => {
                     if (data.todo !== "") {
-                        $("<li>").text(data.todo).appendTo("#ulof").addClass("lik");
-                        $("<span id='remove'>").text("❌").appendTo(".lik").addClass("remove");
+                        const li = $("<li>").addClass("lik").text(data.todo);
+
+                        const div = $("<div class='remove'>");
+                        $("<span class='remove-span'>").text("❌").appendTo(div);
+                        $("<span class='complete-span'>").text("✔️").appendTo(div);
+
+                        li.append(div);
+                        li.appendTo("#ulof");
+
                         $("#todoval").val("");
                     }
                 },
             });
+        });
+
+        $(document).on("click", ".remove-span", (e) => {
+            $(e.target).closest("li").remove(); // 클릭한 .remove-span 요소가 속한 li를 삭제
         });
     </script>
 </body>
